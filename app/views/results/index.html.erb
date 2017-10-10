@@ -1,0 +1,27 @@
+<%= form_tag nil, method: 'get' do%>
+  <%= text_field_tag :q %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% if @videos %>
+	<table class="table">
+		<thead class="thead thead-default">
+			<tr>
+				<th>Title</th>
+				<th>URL</th>
+			</tr>
+		</thead>
+
+	 <tbody class="tbody">
+	 	<% @videos.each do |video| %>
+		 	<tr>
+		 		<td><%= video.snippet.title %></td>
+		 		<td><%= link_to video.video_id, video.url %></td>
+		 		<td><%= raw video.embedded_code %></td>
+		 	</tr>
+	 	<% end %>
+
+		</tbody>>
+	 
+	</table>
+<% end %>

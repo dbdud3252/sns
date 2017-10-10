@@ -1,0 +1,2 @@
+module FindoutsHelper
+end
